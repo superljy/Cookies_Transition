@@ -13,6 +13,7 @@ let fa_cookies = [];
 let eb_cookies = [];
 let cs_cookies = [];
 let kftl_cookies = [];
+let ys_cookies = [];
 fs.mkdir('./anb', err => {
     console.log(err);
 });
@@ -23,7 +24,7 @@ fs.readFile('./Cookies/nsb.json', (err, data) => {
     let _data = JSON.parse(data);
     for (let i = 0; i < _data.length; i++) {
         let str = _data[i].cookie.match(/_abck=(\S*);/)[1];
-        let site = _data[i].site_url.match(/(kidsfootlocker|footlocker|eastbay|champssports|footaction)/)[1];
+        let site = _data[i].site_url.match(/(yeezysupply|kidsfootlocker|footlocker|eastbay|champssports|footaction)/)[1];
         switch (site) {
             case 'footlocker':
                 ftl_cookies.push(str);
@@ -36,6 +37,9 @@ fs.readFile('./Cookies/nsb.json', (err, data) => {
                 break;
             case 'footaction':
                 fa_cookies.push(str);
+                break;
+            case 'yeezysupply':
+                ys_cookies.push(str);
                 break;
             default:
                 kftl_cookies.push(str);
@@ -66,6 +70,11 @@ fs.readFile('./Cookies/nsb.json', (err, data) => {
         kftl_cookies = kftl_cookies.join('\n');
         let file = `./anb/kidsfootlocker.txt`;
         anb_convert(file, kftl_cookies);
+    }
+    if (ys_cookies.length > 0) {
+        ys_cookies = ys_cookies.join('\n');
+        let file = `./anb/yeezysupply.txt`;
+        anb_convert(file, ys_cookies);
     }
 });
 

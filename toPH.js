@@ -13,6 +13,7 @@ let fa_cookies = [];
 let eb_cookies = [];
 let cs_cookies = [];
 let kftl_cookies = [];
+let ys_cookies = [];
 fs.mkdir('./phantom', err => {
     console.log(err);
 });
@@ -23,7 +24,7 @@ fs.readFile('./Cookies/nsb.json', (err, data) => {
     let _data = JSON.parse(data);
     for (let i = 0; i < _data.length; i++) {
         let str = _data[i].cookie.match(/_abck=(\S*);/)[1];
-        let site = _data[i].site_url.match(/(kidsfootlocker|footlocker|eastbay|champssports|footaction)/)[1];
+        let site = _data[i].site_url.match(/(yeezysupply|kidsfootlocker|footlocker|eastbay|champssports|footaction)/)[1];
         switch (site) {
             case 'footlocker':
                 let ftl = {};
@@ -49,10 +50,16 @@ fs.readFile('./Cookies/nsb.json', (err, data) => {
                 fa.site = 'FootAction';
                 fa_cookies.push(fa);
                 break;
+            case 'yeezysupply':
+                let ys = {};
+                ys.cookie = str;
+                ys.site = 'YeezySupply';
+                ys_cookies.push(ys);
+                break;
             default:
                 let kidsftl = {};
                 kidsftl.cookie = str;
-                kiesftl.site = 'KidsFootLocker';
+                kidsftl.site = 'KidsFootLocker';
                 kftl_cookies.push(kidsftl);
                 break;
         }
@@ -76,6 +83,10 @@ fs.readFile('./Cookies/nsb.json', (err, data) => {
     if (kftl_cookies.length > 0) {
         let file = `./phantom/${kftl_cookies[0].site}.json`;
         ph_covert(file, JSON.stringify(kftl_cookies));
+    }
+    if (ys_cookies.length > 0) {
+        let file = `./phantom/${ys_cookies[0].site}.json`;
+        ph_covert(file, JSON.stringify(ys_cookies));
     }
 });
 

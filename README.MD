@@ -19,6 +19,7 @@ _Support NSB to Anb & Phantom!_
 - Export to become a `txt` file 
 - Seperate every sites from footsites(footlocker,footaction,eastbay,champssports,kidsfootlocker)
 - support to export yeezysupply
+- **EVE also support import cookies from `txt` file,so this program also support transition to EVE**
 
 ## To Phantom
 - It will create a folder name `phantom` automaticlly

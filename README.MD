@@ -4,6 +4,16 @@ Cookies Transition Program
 _Support NSB to Anb & Phantom!_
 ---
 
+# How to use
+- Generate some cookies on NSB
+- Find them in NSB folder `%AppData%/NSB/storage/sensorCookies.json`
+- Copy this json file
+- Paste this json file to `Cookies` folder in this program
+- Rename the json file to `nsb.json`
+- Run the `exe` file which you want to transition. Ex : `toPH.exe`
+- After that you can find some cookies in that folder you transition
+
+
 ## To ANB
 - It will create a folder name `anb` automaticlly
 - Export to become a `txt` file 

@@ -8,7 +8,8 @@ _Support NSB to Anb & Phantom!_
 - Generate some cookies on NSB
 - Find them in NSB folder `%AppData%/NSB/storage/sensorCookies.json`
 - Copy this json file
-- Paste this json file to `Cookies` folder in this program
+- Create folder name `Cookies` in this program
+- Paste this json file to `Cookies` folder
 - Rename the json file to `nsb.json`
 - Run the `exe` file which you want to transition. Ex : `toPH.exe`
 - After that you can find some cookies in that folder you transition
